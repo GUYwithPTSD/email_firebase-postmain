@@ -19,4 +19,19 @@ Teknologi yang digunakan:
 
 Langkah pertama adalah membuka Firebase Console dan membuat atau memilih project yang akan digunakan.
 
-![Firebase Console](tugas/firebase_console.png)
+![Firebase Console](tugas/firebase-console.png)
+
+---
+
+## 1.2 Mengaktifkan Authentication Method
+
+Masuk ke menu **Authentication → Sign-in Method** lalu aktifkan:
+
+- Google Sign-In
+- Email/Password
+
+Hal ini memungkinkan pengguna untuk melakukan autentikasi menggunakan email atau akun Google.
+
+![Enable Authentication](tugas/enable-google.png)
+
+---
