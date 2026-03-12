@@ -67,6 +67,7 @@ Hal ini memudahkan penggunaan API Key di berbagai request.
 # 3. Request API - Sign Up (Membuat Akun Baru)
 
 Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:signUp"
+
 ---
 
 ## 3.1 Parameter Request
@@ -101,18 +102,115 @@ Contoh nilai yang dimasukkan ke dalam body: email, password, dan returnSecureTok
 
 ![Body SignUp](tugas/sign-up-2.png)
 
+---
 
+## 3.4 Contoh Script JSON Body
 
+Berikut adalah contoh script JSON yang digunakan dalam body request untuk melakukan Sign-Up:
 
+```json
+{
+  "email": "user@example.com",
+  "password": "securePassword123!",
+  "returnSecureToken": true
+}
+```
 
+**Penjelasan:**
+- `email`: Email yang akan didaftarkan untuk akun baru
+- `password`: Password untuk akun tersebut (minimal 6 karakter)
+- `returnSecureToken`: Flag untuk mengembalikan secure token jika pendaftaran berhasil
 
+![Sign Up JSON Script](tugas/sign-up-json.png)
 
+---
 
+## 3.5 Response - Konsol & Hasil Berhasil
 
+Ketika permintaan Sign-Up berhasil, Anda akan menerima response JSON dengan informasi berikut:
 
+```json
+{
+  "idToken": "eyJhbGc...",
+  "email": "user@example.com",
+  "refreshToken": "AEnB2UqW...",
+  "expiresIn": "3600",
+  "localId": "ZY1rHQfqZXAIz8Oz..."
+}
+```
 
+**Output Console:**
+- `idToken`: Token yang digunakan untuk autentikasi request berikutnya
+- `email`: Email yang terdaftar
+- `refreshToken`: Token untuk refresh session
+- `expiresIn`: Waktu kadaluarsa token dalam detik
+- `localId`: Unique ID untuk user yang baru dibuat
 
+![Sign Up Console](tugas/sign-up-console.png)
 
+---
 
+## 3.6 Handling Error - Bad Request (400)
 
+Jika terjadi kesalahan dalam request, Anda akan menerima response error dengan status code **400 Bad Request**.
 
+Beberapa contoh error yang umum terjadi:
+
+### Error 1: Email Sudah Terdaftar
+```json
+{
+  "error": {
+    "code": 400,
+    "message": "EMAIL_EXISTS",
+    "errors": [
+      {
+        "message": "EMAIL_EXISTS",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+```
+
+### Error 2: Password Terlalu Pendek
+```json
+{
+  "error": {
+    "code": 400,
+    "message": "WEAK_PASSWORD : Password should be at least 6 characters",
+    "errors": [
+      {
+        "message": "WEAK_PASSWORD : Password should be at least 6 characters",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+```
+
+### Error 3: Format Email Tidak Valid
+```json
+{
+  "error": {
+    "code": 400,
+    "message": "INVALID_EMAIL",
+    "errors": [
+      {
+        "message": "INVALID_EMAIL",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+```
+
+**Penyelesaian:**
+- Pastikan email belum terdaftar sebelumnya
+- Gunakan password minimal 6 karakter
+- Gunakan format email yang valid (contoh: user@domain.com)
+- Pastikan API Key sudah benar dan aktif
+
+![Sign Up Error](tugas/sign-up-fail.png)
