@@ -63,3 +63,56 @@ Hal ini memudahkan penggunaan API Key di berbagai request.
 ![Postman Environment](tugas/environment.png)
 
 ---
+
+# 3. Request API - Sign Up (Membuat Akun Baru)
+
+Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:signUp"
+---
+
+## 3.1 Parameter Request
+
+Pada bagian **Params**, tambahkan parameter berikut:
+
+| Key | Value |
+|----|----|
+| key | {{firebase_api_key}} |
+
+![Params SignUp](tugas/sign-up-1.png)
+
+---
+
+## 3.2 Header Request
+
+Pada bagian **Headers**, tambahkan konfigurasi berikut:
+
+| Key | Value |
+|----|----|
+| Content-Type | application/json |
+
+![Header SignUp](tugas/gambar5.png)
+
+---
+
+## 3.3 Body Request
+
+Gunakan format **JSON** pada body request.
+
+Contoh nilai yang dimasukkan ke dalam body: email, password, dan returnSecureToken
+
+![Body SignUp](tugas/sign-up-2.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
