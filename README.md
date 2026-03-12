@@ -46,6 +46,20 @@ Langkah:
 
 API Key ini akan digunakan pada request API di Postman.
 
-![Firebase API Key](images/website-setting-firebase.png)
+![Firebase API Key](tugas/website-setting-firebase.png)
+
+---
+
+# 2. Setup Postman Environment
+
+## 2.1 Membuat Environment Baru
+
+Buka Postman lalu buat **Environment baru** untuk menyimpan variabel seperti:
+
+- `firebase_api_key`
+
+Hal ini memudahkan penggunaan API Key di berbagai request.
+
+![Postman Environment](tugas/environment.png)
 
 ---
