@@ -248,6 +248,8 @@ Pada bagian **Headers**, tambahkan konfigurasi berikut:
 
 ![Header Verify Email](tugas/header.png)
 
+---
+
 ## 4.3 Body Request
 
 Pada bagian **Body**, tambahkan konfigurasi berikut:
@@ -258,7 +260,10 @@ Pada bagian **Body**, tambahkan konfigurasi berikut:
   "idToken": "AEnB2UqW...",
 }
 ```
+
 ![Body Verify Email](tugas/verivy-email-2.png)
+
+---
 
 ## 4.4 script Request
 
@@ -277,4 +282,35 @@ console.log("Gagal kirim email:", pm.response.json().error.message);
 ```
 ![script Verify Email](tugas/verify-email-3.png)
 
+---
+
+# Endpoint ini digunakan untuk melihat informasi akun, termasuk apakah email sudah **verified** atau belum.
+POST https://identitytoolkit.googleapis.com/v1/accounts:lookup
+
+---
+
+## 8.1 Parameter Request
+
+Pada tab **Params**, tambahkan parameter berikut:
+
+| Key | Value |
+|-----|------|
+| key | {{firebase_api_key}} |
+
+Parameter ini digunakan untuk mengakses Firebase REST API menggunakan API Key dari project Firebase.
+
+![Verify Status Params](tugas/verify-status-1.png)
+
+---
+
+## 8.2 Body Request
+
+Pada bagian **Body**, gunakan format JSON berikut:
+
+```json
+{
+  "idToken": "{{idToken}}"
+}
+```
+![Verify Status body](tugas/verify-status-2.png)
 
