@@ -298,7 +298,7 @@ POST https://identitytoolkit.googleapis.com/v1/accounts:lookup?key={{FIREBASE_AP
 
 ---
 
-## 8.1 Parameter Request
+## 5.1 Parameter Request
 
 Pada tab **Params**, tambahkan parameter berikut:
 
@@ -312,7 +312,7 @@ Parameter ini digunakan untuk mengakses Firebase REST API menggunakan API Key da
 
 ---
 
-## 8.2 Body Request
+## 5.2 Body Request
 
 Pada bagian **Body**, gunakan format JSON berikut:
 
@@ -323,7 +323,7 @@ Pada bagian **Body**, gunakan format JSON berikut:
 ```
 ![Verify Status body](tugas/verif-status-2.png)
 
-## 8.3 penerimaan melalui email
+## 5.3 penerimaan melalui email
 
 setelah user menjalankan kode pada bagian body, sebuah pesan berupa email pada akun tertaut akan muncul, pengguna harus 
 mengklik tautan agar dapat diterima oleh sistem. setelahnya sistem akan menandai bahwa pengguna telah terverifikasi
@@ -332,3 +332,51 @@ mengklik tautan agar dapat diterima oleh sistem. setelahnya sistem akan menandai
 
 ![Verify Status body](tugas/verif-status-2-true.png)
 
+---
+
+# 6. Request API – Login User
+
+Endpoint Firebase yang digunakan untuk login user adalah: https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={{FIREBASE_API_KEY}}
+
+
+Endpoint ini digunakan untuk melakukan autentikasi pengguna menggunakan **email dan password** yang telah terdaftar di Firebase Authentication.
+
+---
+
+# 6.1 Parameter Request
+
+Pada tab **Params**, tambahkan parameter berikut:
+
+| Key | Value |
+|-----|------|
+| key | {{firebase_api_key}} |
+
+Parameter ini berfungsi untuk menghubungkan request Postman dengan project Firebase melalui **API Key**.
+
+---
+
+# 6.2 Header Request
+
+Pada tab **Headers**, tambahkan konfigurasi berikut:
+
+| Key | Value |
+|-----|------|
+| Content-Type | application/json |
+
+Header ini menunjukkan bahwa request menggunakan format **JSON**.
+
+---
+
+# 6.3 Body Request
+
+Pada bagian **Body**, pilih **raw → JSON** lalu gunakan format berikut:
+
+```json
+{
+  "email": "{{USER-EMAIL}}",
+  "password": "{{USER_PASSWORD}}",
+  "returnSecureToken": true
+}
+```
+
+![Login Header](/tugas/login.png)
