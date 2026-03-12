@@ -214,3 +214,36 @@ Beberapa contoh error yang umum terjadi:
 - Pastikan API Key sudah benar dan aktif
 
 ![Sign Up Error](tugas/sign-up-fail.png)
+
+---
+
+---
+
+# 4. Request API - Send Email Verification (Mengirim Email Verifikasi)
+
+Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode"
+
+Fitur ini memungkinkan Anda untuk mengirim email verifikasi ke pengguna yang baru didaftarkan.
+
+---
+
+## 4.1 Parameter Request
+Pada bagian **Params**, tambahkan parameter berikut:
+
+| Key | Value |
+|----|----|
+| key | {{firebase_api_key}} |
+
+![Params Verify Email](tugas/verify-email-1.png)
+
+---
+
+## 4.2 Header Request
+
+Pada bagian **Headers**, tambahkan konfigurasi berikut:
+
+| Key | Value |
+|----|----|
+| Content-Type | application/json |
+
+![Header Verify Email](tugas/header.png)
