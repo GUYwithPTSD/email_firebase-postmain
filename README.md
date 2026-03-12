@@ -66,7 +66,8 @@ Hal ini memudahkan penggunaan API Key di berbagai request.
 
 # 3. Request API - Sign Up (Membuat Akun Baru)
 
-Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:signUp"
+Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={{FIREBASE_API_KEY}}
+"
 
 ---
 
@@ -221,7 +222,8 @@ Beberapa contoh error yang umum terjadi:
 
 # 4. Request API - Send Email Verification (Mengirim Email Verifikasi)
 
-Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode"
+Endpoint yang digunakan: "POST https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key={{FIREBASE_API_KEY}}
+"
 
 Fitur ini memungkinkan Anda untuk mengirim email verifikasi ke pengguna yang baru didaftarkan.
 
@@ -284,8 +286,15 @@ console.log("Gagal kirim email:", pm.response.json().error.message);
 
 ---
 
+## 4.5 verify email berhasil
+jika berhasil. pada console.log akan muncul tulisan seperti ini
+
+![console Verify Email](tugas/verivy-email-console.png)
+
+---
+
 # Endpoint ini digunakan untuk melihat informasi akun, termasuk apakah email sudah **verified** atau belum.
-POST https://identitytoolkit.googleapis.com/v1/accounts:lookup
+POST https://identitytoolkit.googleapis.com/v1/accounts:lookup?key={{FIREBASE_API_KEY}}
 
 ---
 
@@ -299,7 +308,7 @@ Pada tab **Params**, tambahkan parameter berikut:
 
 Parameter ini digunakan untuk mengakses Firebase REST API menggunakan API Key dari project Firebase.
 
-![Verify Status Params](tugas/verify-status-1.png)
+![Verify Status Params](tugas/verif-status-1.png)
 
 ---
 
@@ -312,5 +321,14 @@ Pada bagian **Body**, gunakan format JSON berikut:
   "idToken": "{{idToken}}"
 }
 ```
-![Verify Status body](tugas/verify-status-2.png)
+![Verify Status body](tugas/verif-status-2.png)
+
+## 8.3 penerimaan melalui email
+
+setelah user menjalankan kode pada bagian body, sebuah pesan berupa email pada akun tertaut akan muncul, pengguna harus 
+mengklik tautan agar dapat diterima oleh sistem. setelahnya sistem akan menandai bahwa pengguna telah terverifikasi
+
+![Verify Status email](tugas/notif-email.png)
+
+![Verify Status body](tugas/verif-status-2-true.png)
 
