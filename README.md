@@ -248,8 +248,15 @@ Pada bagian **Headers**, tambahkan konfigurasi berikut:
 
 ![Header Verify Email](tugas/header.png)
 
-| Key | Value |
-|----|----|
-| Content-Type | application/json |
+## 4.2 Body Request
 
-![Header Verify Email](tugas/header.png)
+Pada bagian **Body**, tambahkan konfigurasi berikut:
+
+```json
+{
+  "RequestType": "VERIFY_EMAIL",
+  "idToken": "AEnB2UqW...",
+}
+```
+![Body Verify Email](tugas/verivy-email-2.png)
+
