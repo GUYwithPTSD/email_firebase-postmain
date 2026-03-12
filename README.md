@@ -35,3 +35,17 @@ Hal ini memungkinkan pengguna untuk melakukan autentikasi menggunakan email atau
 ![Enable Authentication](tugas/enable-google.png)
 
 ---
+
+## 1.3 Mengambil Firebase API Key
+
+Untuk menggunakan Firebase REST API, kita memerlukan **API Key** dari project Firebase.
+
+Langkah:
+1. Masuk ke **Project Settings**
+2. Cari bagian **Web API Key**
+
+API Key ini akan digunakan pada request API di Postman.
+
+![Firebase API Key](images/website-setting-firebase.png)
+
+---
