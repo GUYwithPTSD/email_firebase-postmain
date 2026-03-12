@@ -248,7 +248,7 @@ Pada bagian **Headers**, tambahkan konfigurasi berikut:
 
 ![Header Verify Email](tugas/header.png)
 
-## 4.2 Body Request
+## 4.3 Body Request
 
 Pada bagian **Body**, tambahkan konfigurasi berikut:
 
@@ -259,4 +259,22 @@ Pada bagian **Body**, tambahkan konfigurasi berikut:
 }
 ```
 ![Body Verify Email](tugas/verivy-email-2.png)
+
+## 4.4 script Request
+
+Pada bagian **script**, tambahkan konfigurasi berikut:
+
+```json
+// Postman → Tests tab:
+if (pm.response.code === 200) {
+const json = pm.response.json();
+console.log("Email verifikasi dikirim ke:", json.email);
+console.log("Sekarang buka inbox email dan klik link verifikasi.");
+console.log("Setelah klik, lanjut ke Step 3 untuk cek status.");
+} else {
+console.log("Gagal kirim email:", pm.response.json().error.message);
+}
+```
+![script Verify Email](tugas/verify-email-3.png)
+
 
