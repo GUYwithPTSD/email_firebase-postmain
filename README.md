@@ -90,7 +90,7 @@ Pada bagian **Headers**, tambahkan konfigurasi berikut:
 |----|----|
 | Content-Type | application/json |
 
-![Header SignUp](tugas/gambar5.png)
+![Header SignUp](tugas/header.png)
 
 ---
 
@@ -121,7 +121,7 @@ Berikut adalah contoh script JSON yang digunakan dalam body request untuk melaku
 - `password`: Password untuk akun tersebut (minimal 6 karakter)
 - `returnSecureToken`: Flag untuk mengembalikan secure token jika pendaftaran berhasil
 
-![Sign Up JSON Script](tugas/sign-up-json.png)
+![Sign Up JSON Script](tugas/sign-up-JSON.png)
 
 ---
 
@@ -241,6 +241,12 @@ Pada bagian **Params**, tambahkan parameter berikut:
 ## 4.2 Header Request
 
 Pada bagian **Headers**, tambahkan konfigurasi berikut:
+
+| Key | Value |
+|----|----|
+| Content-Type | application/json |
+
+![Header Verify Email](tugas/header.png)
 
 | Key | Value |
 |----|----|
